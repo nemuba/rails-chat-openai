@@ -1,0 +1,9 @@
+<%= form_with(model: chat) do |f| %>
+<div class="form-group">
+  <%= f.text_field :name, class: 'form-control', placeholder: 'Enter chat name here...' %>
+</div>
+
+<div class="form-group">
+  <%= f.submit 'Create Chat', class: 'btn btn-primary' %>
+</div>
+<% end %>

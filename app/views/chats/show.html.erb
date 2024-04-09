@@ -1,0 +1,23 @@
+<%= turbo_frame_tag :chat_messages do %>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Chat <%= @chat.name %></h3>
+        </div>
+        <div class="panel-body">
+          <%=  turbo_stream_from :messages %>
+          <ul class="list-group" id="messages">
+            <%= render partial: 'messages/message', collection: @chat.messages %>
+          </ul>
+        </div>
+        <div class="panel-footer">
+          <%= render partial: 'messages/form', locals: { chat: @chat } %>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<% end %>
+
